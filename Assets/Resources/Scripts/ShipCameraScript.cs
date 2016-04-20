@@ -11,7 +11,7 @@ public class ShipCameraScript : MonoBehaviour {
 	}
     void initialize()
     {
-        //myShip = GetComponentInParent<Rigidbody>().gameObject;
+        myShip = GetComponentInParent<Rigidbody>().gameObject;
     }
 
     // Update is called once per frame
