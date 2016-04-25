@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class GravityScript : MonoBehaviour
 {
     float G = 100000;
-    float myMass = 1000000;
+    float myMass = 10000000;
     List<GameObject> objs = new List<GameObject>();
     List<Rigidbody> rbs = new List<Rigidbody>();
     Vector3 location;

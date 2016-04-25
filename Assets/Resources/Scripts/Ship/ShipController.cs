@@ -2,8 +2,8 @@
 using System.Collections;
 
 public class ShipController : MonoBehaviour {
-    Vector3 acc;
-    Vector3 spin;
+    public Vector3 acc;
+    public Vector3 spin;
     Rigidbody rb;
     public float mainBoosterStrength;
     public float auxBoosterStrength;
@@ -32,13 +32,14 @@ public class ShipController : MonoBehaviour {
         spin = new Vector3(roll*auxBoosterStrength, pitch * auxBoosterStrength, yaw * auxBoosterStrength);
         angularDampenerSetting += _angDampenSetting;
         velocityDampenerSetting += _velDamp;
+        
+    }
+    void enterAtmosphere(Transform newParent)
+    {
+        transform.SetParent(newParent);
     }
 	// Update is called once per frame
 	void FixedUpdate () {
-        rb.AddRelativeForce(acc);
-        if (acc.magnitude > 0) fuel -= mainBoosterFuelRate;
-        rb.AddRelativeTorque(spin);
-        if (spin.magnitude > 0) fuel -= auxBoosterFuelRate;
         if (angularDampenerSetting > 0 && spin.x == 0 && spin.y == 0 && spin.z == 0)
         {
             angularDampen();
@@ -58,6 +59,10 @@ public class ShipController : MonoBehaviour {
         {
             outOfFuel();
         }
+        rb.AddRelativeForce(acc);
+        if (acc.magnitude > 0) fuel -= mainBoosterFuelRate;
+        rb.AddRelativeTorque(spin);
+        if (spin.magnitude > 0) fuel -= auxBoosterFuelRate;
     }
     void outOfFuel()
     {

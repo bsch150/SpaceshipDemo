@@ -69,9 +69,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Resources\Scripts\InputManager.cs" />
+    <Compile Include="Assets\Resources\Scripts\Planet\AtmosphereScript.cs" />
     <Compile Include="Assets\Resources\Scripts\Planet\GravityScript.cs" />
     <Compile Include="Assets\Resources\Scripts\Planet\PlanetScript.cs" />
     <Compile Include="Assets\Resources\Scripts\Reporter.cs" />
+    <Compile Include="Assets\Resources\Scripts\Ship\ParticleSystemController.cs" />
     <Compile Include="Assets\Resources\Scripts\Ship\ShipController.cs" />
     <Compile Include="Assets\Resources\Scripts\ShipCameraScript.cs" />
   </ItemGroup>
